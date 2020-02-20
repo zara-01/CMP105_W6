@@ -24,7 +24,7 @@ Zombie::Zombie(sf::RenderWindow* hwnd)
 	isJumping = false;
 
 	window = hwnd;
-
+	sf::Event event;
 }
 
 Zombie::~Zombie() {}
@@ -33,6 +33,22 @@ Zombie::~Zombie() {}
 
 void Zombie::handleInput(float dt)
 {
+	if (input->isMouseLDown())
+	{
+		stepVelocity = sf::Vector2f(0, 0);
+		int x = input->getMouseX();
+		int y = input->getMouseY();
+		setPosition(x, y);
+
+	}
+
+	/*if (input->isKeyDown(sf::Keyboard::S))
+	{
+		int x = input->getMouseX();
+		int y = input->getMouseY();
+		setPosition(x, y);
+		
+	}*/
 
 	//jump and check if already jumping
 	if (input->isKeyDown(sf::Keyboard::Space))

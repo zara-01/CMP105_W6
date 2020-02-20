@@ -16,7 +16,7 @@ public:
 	//void update(float dt);
 
 	void update(float dt) override;
-
+	sf::Event event;
 
 protected:
 
