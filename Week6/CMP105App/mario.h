@@ -27,6 +27,7 @@ protected:
 	sf::Vector2f direction;
 	float speed;
 	sf::Vector2f pointB;
+	sf::Vector2f pointA;
 	
 
 };

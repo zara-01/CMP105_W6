@@ -24,7 +24,7 @@ mario::mario()
 	//scale = 200.0f;
 	speed = 200;
 	direction = sf::Vector2f();
-	pointB = sf::Vector2f(600, 600);
+	
 
 }
 
@@ -64,7 +64,10 @@ void mario::handleInput(float dt)
 
 void mario::update(float dt)
 {
-	direction = pointB - getPosition();
+	pointA = sf::Vector2f(getPosition().x, getPosition().y);
+	pointB = sf::Vector2f(input->getMouseX(), input->getMouseY());
+
+	direction = pointB - pointA;
 	direction = Vector::normalise(direction);
 	move((direction * speed) * dt);
 
