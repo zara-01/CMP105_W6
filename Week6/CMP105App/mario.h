@@ -26,6 +26,7 @@ protected:
 	float acceleration;
 	sf::Vector2f direction;
 	float speed;
+	float scale;
 	sf::Vector2f pointB;
 	sf::Vector2f pointA;
 	

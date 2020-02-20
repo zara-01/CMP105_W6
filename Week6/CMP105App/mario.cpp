@@ -21,9 +21,10 @@ mario::mario()
 	currentAnimation = &walk;
 	setTextureRect(currentAnimation->getCurrentFrame());
 
-	//scale = 200.0f;
-	speed = 200;
+	scale = 200.0f;
+	speed = 0;
 	direction = sf::Vector2f();
+	scale = 21;
 	
 
 }
@@ -67,9 +68,19 @@ void mario::update(float dt)
 	pointA = sf::Vector2f(getPosition().x, getPosition().y);
 	pointB = sf::Vector2f(input->getMouseX(), input->getMouseY());
 
+	speed += 2 * dt;
+
 	direction = pointB - pointA;
 	direction = Vector::normalise(direction);
-	move((direction * speed) * dt);
+	velocity = (direction * speed) * scale;
+
+	move(velocity * dt);
+
+	if (Vector::magnitude(pointB - getPosition()) <= 2.f)
+	{
+		setPosition(pointB);
+		speed = 0;
+	}
 
 	currentAnimation->animate(dt);
 	setTextureRect(currentAnimation->getCurrentFrame());
