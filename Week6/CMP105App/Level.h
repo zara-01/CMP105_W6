@@ -2,6 +2,8 @@
 
 #include <SFML/Graphics.hpp>
 #include "Framework/Input.h"
+#include "Framework/GameObject.h"
+#include "Zombie.h"
 #include <string.h>
 #include <iostream>
 
@@ -25,4 +27,8 @@ private:
 	Input* input;
 
 	// More level variables
+
+	sf::Texture zombieTexture;
+	Zombie zombie;
+
 };

@@ -36,6 +36,9 @@
     <ClCompile Include="Framework\GameObject.cpp">
       <Filter>Framework</Filter>
     </ClCompile>
+    <ClCompile Include="Zombie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="README.txt">
@@ -60,6 +63,9 @@
     </ClInclude>
     <ClInclude Include="Framework\GameObject.h">
       <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombie.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
